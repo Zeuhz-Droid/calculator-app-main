@@ -1,0 +1,343 @@
+/* GENERAL VARIABLES */
+
+:root {
+  /* THEME 1 */
+  /* BACKGROUNDS */
+  --main-body-background: hsl(222, 26%, 31%);
+  --toggle-keypad-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+
+  /* KEYS */
+  --del-reset-background: hsl(225, 21%, 49%);
+  --del-reset-shadow: hsl(224, 28%, 35%);
+  --key-toggle-assgn-bg: hsl(6, 63%, 50%);
+  --assignment-shadow: hsl(6, 70%, 34%);
+  --key-background: hsl(30, 25%, 89%);
+  --key-shadow: hsl(28, 16%, 65%);
+
+  /* TEXT */
+  --text-button-blue: hsl(221, 14%, 31%);
+  --text-white: hsl(0, 0%, 100%);
+}
+
+/* RESPONSIVE LAYOUT STYLES */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  font-size: 3.2rem;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-body-background);
+}
+
+.container {
+  width: 35vw;
+  max-width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* MAIN/GENERAL BODY STYLES */
+/* HEADER */
+#pass-header {
+  padding-left: 1rem;
+  color: var(--text-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: all 0.5s;
+}
+
+.heading--1 {
+  font-size: 3rem;
+}
+
+.heading--2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.calc__theme {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btns__number {
+  font-size: 1.5rem;
+}
+
+.btns__number span {
+  display: inline-block;
+}
+
+.btns__number span:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.btns__theme {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.2rem;
+  border-radius: 1rem;
+  background-color: var(--toggle-keypad-background);
+
+  transition: all 0.5s;
+}
+
+.show {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.theme {
+  height: 1.2rem;
+  width: 1.2rem;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.theme::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.theme--1::before {
+  background-color: var(--key-toggle-assgn-bg);
+}
+
+.theme--2::before {
+  background-color: hsl(25, 98%, 40%);
+}
+
+.theme--3::before {
+  background-color: hsl(176, 100%, 44%);
+}
+
+/* MAIN SECTION */
+#pass-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.screen {
+  font-size: 4rem;
+  height: 10rem;
+  color: var(--text-white);
+  text-align: right;
+  padding: 3.5rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--screen-background);
+
+  transition: all 0.5s;
+}
+
+.answer {
+  display: inline-block;
+}
+
+.numbers {
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: var(--toggle-keypad-background);
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(5rem, 1fr));
+  grid-template-rows: repeat(5, 1fr);
+  gap: 2rem;
+  box-shadow: 0 1rem -2rem 1rem var(--toggle-keypad-background);
+
+  transition: all 0.5s;
+}
+
+.numbers button {
+  font-family: "League Spartan", sans-serif;
+  font-size: 3.2rem;
+  appearance: none;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  color: var(--text-button-blue);
+  box-shadow: 0px 0.35rem 0.1rem var(--key-shadow);
+  transition: all 0.5s;
+  transition: transform 0.2s;
+}
+
+.numbers button span {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem 0.6rem;
+}
+
+.numbers button:hover {
+  transform: translateY(-0.1rem);
+}
+
+.numbers button:active {
+  transform: translateY(0);
+}
+
+.numbers button:active span {
+  backdrop-filter: brightness(130%);
+}
+
+.numbers .del,
+.numbers .reset {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--text-white);
+  text-transform: uppercase;
+  background-color: var(--del-reset-background);
+  box-shadow: 0px 0.35rem 0.1rem var(--del-reset-shadow);
+
+  transition: all 0.5s;
+}
+
+.numbers .reset {
+  grid-column: 1 / span 2;
+}
+
+.numbers .assignment {
+  grid-column: 3 / -1;
+  color: var(--text-white);
+  background-color: var(--key-toggle-assgn-bg);
+  box-shadow: 0px 0.35rem 0.1rem var(--assignment-shadow);
+
+  transition: all 0.5s;
+}
+
+/* THE ATTRIBUTION STYLES */
+.attribution {
+  font-size: 1.2rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.attribution a:link,
+.attribution a:visited {
+  color: var(--medium-gray);
+  text-decoration: none;
+  opacity: 0.5;
+  transition: all 0.2s;
+}
+
+.attribution a:hover {
+  opacity: 1;
+}
+
+.flash {
+  animation: flash 0.2s ease-in;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+/* END OF GENERAL BODY STYLES */
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 75em) {
+  .container {
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: 56.25em) {
+  .container {
+    width: 55vw;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .container {
+    width: 90vw;
+    padding: 0rem;
+  }
+
+  .numbers button {
+    box-shadow: 0px 0.4rem 0.1rem var(--key-shadow);
+  }
+
+  .numbers button span {
+    padding: 2rem 2rem 1.1rem;
+  }
+
+  .numbers .del,
+  .numbers .reset {
+    font-size: 1.6rem;
+  }
+}
+
+/* ////////////////////////////////////////////////// */
+
+/* ### Theme 3 */
+/* #### Backgrounds */
+
+/* --very-dark-violet (main background): hsl(268, 75%, 9%)
+--very-dark-violet (toggle background, keypad background, screen background): hsl(268, 71%, 12%)
+
+#### Keys
+
+--dark-violet (key background): hsl(281, 89%, 26%)
+--vivid-magenta (key shadow): hsl(285, 91%, 52%)
+
+--pure-cyan (key background, toggle): hsl(176, 100%, 44%)
+--soft-cyan (key shadow): hsl(177, 92%, 70%)
+
+--very-dark-violet (key background): hsl(268, 47%, 21%)
+--dark-magenta (key shadow): hsl(290, 70%, 36%)
+
+#### Text
+
+--light-yellow: hsl(52, 100%, 62%)
+--very-dark-blue: hsl(198, 20%, 13%)
+--white (text): hsl(0, 0, 100%) */

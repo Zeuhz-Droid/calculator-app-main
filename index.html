@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <!-- FAVICON PATH LINK -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- FONTS LINK -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- LINK TO EXTERNAL STYLES FILE -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body>
+    <div class="container">
+      <header id="pass-header">
+        <h1 class="heading--1">calc</h1>
+        <div class="calc__theme">
+          <h2 class="heading--2">theme</h2>
+          <div class="btns">
+            <div class="btns__number">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+            </div>
+            <div class="btns__theme">
+              <input
+                type="radio"
+                name="theme"
+                id="theme1"
+                class="theme theme--1 show"
+                checked="checked"
+              />
+              <input
+                type="radio"
+                name="theme"
+                id="theme2"
+                class="theme theme--2 hide"
+              />
+              <input
+                type="radio"
+                name="theme"
+                id="theme3"
+                class="theme theme--3 hide"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main id="pass-main">
+        <div class="screen">
+          <span class="result">399,981</span>
+        </div>
+        <div class="numbers">
+          <button class="number number--7" value="7"><span>7</span></button>
+          <button class="number number--8" value="8"><span>8</span></button>
+          <button class="number number--9" value="9"><span>9</span></button>
+          <button class="del"><span>Del</span></button>
+          <button class="number number--4" value="4"><span>4</span></button>
+          <button class="number number--5" value="5"><span>5</span></button>
+          <button class="number number--6" value="6"><span>6</span></button>
+          <button class="plus"><span>+</span></button>
+          <button class="number number--1" value="1"><span>1</span></button>
+          <button class="number number--2" value="2"><span>2</span></button>
+          <button class="number number--3" value="3"><span>3</span></button>
+          <button class="minus"><span>-</span></button>
+          <button class="number dot" value="."><span>.</span></button>
+          <button class="number number--0" value="0"><span>0</span></button>
+          <button class="divide"><span>/</span></button>
+          <button class="multiply"><span>×</span></button>
+          <button class="reset"><span>reset</span></button>
+          <button class="assignment"><span>=</span></button>
+        </div>
+      </main>
+      <!-- ATTRIBUTION SECTION -->
+      <footer id="pass-footer">
+        <div class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="https://github.com/Zeuhz-Droid">zeuhz Droid</a>.
+        </div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
