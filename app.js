@@ -142,7 +142,7 @@ themes.forEach((theme) =>
       buttons.forEach((btn) => {
         btn.style.color = "hsl(60, 10%, 19%)";
         btn.style.backgroundColor = "hsl(30, 25%, 89%)";
-        btn.style.boxShadow = "0px 0.35rem 0.1rem hsl(224, 28%, 35%);";
+        btn.style.boxShadow = "0px 0.35rem 0.1rem hsl(28, 16%, 65%)";
       });
       reset.style.backgroundColor = "hsl(225, 21%, 49%)";
       del.style.backgroundColor = "hsl(225, 21%, 49%)";
@@ -163,7 +163,7 @@ themes.forEach((theme) =>
       buttons.forEach((btn) => {
         btn.style.color = "hsl(60, 10%, 19%)";
         btn.style.backgroundColor = "hsl(45, 7%, 89%)";
-        btn.style.boxShadow = "0px 0.35rem 0.1rem hsl(185, 58%, 25%);";
+        btn.style.boxShadow = "0px 0.35rem 0.1rem hsl(35, 11%, 61%)";
       });
       reset.style.backgroundColor = "hsl(185, 42%, 37%)";
       del.style.backgroundColor = "hsl(185, 42%, 37%)";
@@ -184,7 +184,7 @@ themes.forEach((theme) =>
       buttons.forEach((btn) => {
         btn.style.color = "hsl(52, 100%, 62%)";
         btn.style.backgroundColor = "hsl(268, 47%, 21%)";
-        btn.style.boxShadow = "0px 0.35rem 0.1rem hsl(285, 91%, 52%);";
+        btn.style.boxShadow = "0px 0.35rem 0.1rem hsl(285, 91%, 52%)";
       });
       reset.style.backgroundColor = "hsl(281, 89%, 26%)";
       del.style.backgroundColor = "hsl(281, 89%, 26%)";
