@@ -148,6 +148,8 @@ themes.forEach((theme) =>
       del.style.backgroundColor = "hsl(225, 21%, 49%)";
       reset.style.boxShadow = "0px 0.35rem 0.1rem hsl(224, 28%, 35%)";
       del.style.boxShadow = "0px 0.35rem 0.1rem hsl(224, 28%, 35%)";
+      reset.style.color = "white";
+      del.style.color = "white";
 
       assignment.style.backgroundColor = "hsl(6, 63%, 50%)";
       assignment.style.boxShadow = "0px 0.35rem 0.1rem  hsl(6, 70%, 34%)";
