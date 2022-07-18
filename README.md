@@ -17,6 +17,7 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
     - [Useful resources](#useful-resources)
   - [Author](#author)
   - [Acknowledgments](#acknowledgments)
+  - [APPENDIX](#appendix)
 
 ## Overview
 
@@ -127,3 +128,7 @@ OOP comes after I have mastered this, but I am already soaking OOP in little by 
 ## Acknowledgments
 
 I give glory to the King of Glory who kept me alive to write this codes, Mr Jonas my tutor, and Ifedayo codes my friend.
+
+## APPENDIX
+
+![](images/solution%20desktop%20theme-2.png)

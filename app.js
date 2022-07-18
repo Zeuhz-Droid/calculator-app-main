@@ -9,9 +9,8 @@ const buttons = document.querySelectorAll("button");
 
 // THEMES
 const themes = document.querySelectorAll(".theme");
-const theme1 = document.querySelector(".theme--1");
-const theme2 = document.querySelector(".theme--2");
-const theme3 = document.querySelector(".theme--3");
+const attribution = document.querySelector(".attribution");
+const attributionLink = document.querySelectorAll(".attribution a");
 
 // SCREEN AND BUTTON NUMBERS
 const result = document.querySelector(".result");
@@ -154,6 +153,10 @@ themes.forEach((theme) =>
       assignment.style.backgroundColor = "hsl(6, 63%, 50%)";
       assignment.style.boxShadow = "0px 0.35rem 0.1rem  hsl(6, 70%, 34%)";
       assignment.style.color = "hsl(0, 0%, 100%)";
+      attribution.style.color = "hsl(224, 36%, 15%)";
+      attributionLink.forEach(
+        (link) => (link.style.color = "hsl(224, 36%, 15%)")
+      );
     }
     if (theme.id === "theme2") {
       document.body.style.backgroundColor = " hsl(0, 0%, 90%)";
@@ -175,6 +178,10 @@ themes.forEach((theme) =>
       assignment.style.backgroundColor = "hsl(25, 98%, 40%)";
       assignment.style.boxShadow = "0px 0.35rem 0.1rem  hsl(25, 99%, 27%)";
       assignment.style.color = "hsl(0, 0%, 100%)";
+      attribution.style.color = "hsl(224, 36%, 15%)";
+      attributionLink.forEach(
+        (link) => (link.style.color = "hsl(224, 36%, 15%)")
+      );
     }
     if (theme.id === "theme3") {
       document.body.style.backgroundColor = " hsl(268, 75%, 9%)";
@@ -196,6 +203,10 @@ themes.forEach((theme) =>
       assignment.style.backgroundColor = "hsl(176, 100%, 44%)";
       assignment.style.boxShadow = "0px 0.35rem 0.1rem hsl(177, 92%, 70%)";
       assignment.style.color = "black";
+      attribution.style.color = "hsl(52, 100%, 62%)";
+      attributionLink.forEach(
+        (link) => (link.style.color = "hsl(52, 100%, 62%)")
+      );
     }
   })
 );
