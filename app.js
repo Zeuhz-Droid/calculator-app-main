@@ -12,7 +12,6 @@ const themes = document.querySelectorAll(".theme");
 const theme1 = document.querySelector(".theme--1");
 const theme2 = document.querySelector(".theme--2");
 const theme3 = document.querySelector(".theme--3");
-const themeBefore = document.querySelector(".theme::before");
 
 // SCREEN AND BUTTON NUMBERS
 const result = document.querySelector(".result");
@@ -28,91 +27,92 @@ const assignment = document.querySelector(".assignment");
 const reset = document.querySelector(".reset");
 
 let operator,
-  operand1 = "",
-  operand2 = "",
+  operand = "",
   operands = [],
-  answer,
+  answer = 0,
   isOperator = false,
   isAssignment = false;
 
 result.textContent = 0;
 
 const init = function () {
-  operand1 = "";
-  operand2 = "";
+  operand = "";
+  operands = [];
   answer = 0;
-  result.textContent = "";
+  (isOperator = false), (isAssignment = false);
+  result.textContent = "0";
 };
 reset.addEventListener("click", init);
 
 const getNum = function (numbers) {
   numbers.forEach((number) =>
     number.addEventListener("click", function () {
-      if (!isOperator) {
-        operand1 += this.value;
-        result.textContent = operand1;
-        result.classList.remove("flash");
-      }
-      if (isOperator) {
-        operand2 += this.value;
-        result.textContent = operand2;
-        result.classList.remove("flash");
-      }
+      operand += this.value;
+      result.textContent = operand;
+      result.classList.remove("flash");
     })
   );
 };
 getNum(numberAll);
 
-plus.addEventListener("click", function () {
+const initOperation = function (operator = "=") {
   isOperator = true;
-  operator = "plus";
+  operator = `${operator}`;
+  operands.push(operand, operator);
+  operand = "";
   result.classList.add("flash");
+};
+
+plus.addEventListener("click", function () {
+  initOperation("plus");
 });
 
 minus.addEventListener("click", function () {
-  isOperator = true;
-  operator = "minus";
-  result.classList.add("flash");
+  initOperation("minus");
 });
 
 divide.addEventListener("click", function () {
-  isOperator = true;
-  operator = "divide";
-  result.classList.add("flash");
+  initOperation("divide");
 });
 
 multiply.addEventListener("click", function () {
-  isOperator = true;
-  operator = "multiply";
-  result.classList.add("flash");
+  initOperation("multiply");
 });
 
 assignment.addEventListener("click", function () {
+  initOperation();
   isAssignment = true;
-  if (operator === "plus") {
-    answer = +operand1 + +operand2;
-    result.textContent = answer;
-  }
+  console.log(operands);
+  answer = +operands[0];
+  for (let i = 0; i < operands.length; i++) {
+    if (operands[i] === "plus") {
+      answer += +operands[i + 1];
+      console.log(answer);
+    }
 
-  if (operator === "minus") {
-    answer = +operand1 - +operand2;
-    result.textContent = answer;
-  }
+    if (operands[i] === "minus") {
+      answer -= +operands[i + 1];
+      console.log(answer);
+    }
 
-  if (operator === "divide") {
-    answer = +operand1 / +operand2;
-    result.textContent = answer;
-  }
+    if (operands[i] === "divide") {
+      answer /= +operands[i + 1];
+    }
 
-  if (operator === "multiply") {
-    answer = +operand1 * +operand2;
-    result.textContent = answer;
+    if (operands[i] === "multiply") {
+      answer *= +operands[i + 1];
+    }
   }
-  operand1 = operand2 = "";
-  isOperator = false;
+  result.textContent = answer;
+  operands = [];
 });
 
-del.addEventListener("click", function () {});
+del.addEventListener("click", function () {
+  const numArr = result.textContent.split("");
+  const numToUse = numArr.slice(0, -1).join("");
+  result.textContent = numToUse;
+  operand = numToUse;
+});
 
 // THE THEME TOGGLE FUNCTIONALITY
 themes.forEach((theme) =>
