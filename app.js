@@ -102,7 +102,7 @@ assignment.addEventListener("click", function () {
       answer *= +operands[i + 1];
     }
   }
-  result.textContent = answer;
+  result.textContent = answer.toFixed(16);
   operands = [];
 });
 
