@@ -102,14 +102,14 @@ assignment.addEventListener("click", function () {
       answer *= +operands[i + 1];
     }
   }
-  result.textContent = answer.toFixed(10);
+  result.textContent = answer;
   operands = [];
 });
 
 del.addEventListener("click", function () {
   const numArr = result.textContent.split("");
   const numToUse = numArr.slice(0, -1).join("");
-  result.textContent = numToUse.toFixed(10);
+  result.textContent = numToUse;
   operand = numToUse;
 });
 
